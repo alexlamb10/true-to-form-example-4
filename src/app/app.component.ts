@@ -9,7 +9,7 @@ import { map, startWith } from 'rxjs';
 })
 export class AppComponent {
   public form = this._fb.group({
-    todos: this._fb.array([]),
+    todos: this._fb.array([], [Validators.minLength(1)]),
   });
 
   get todosFormArray(): FormArray {
