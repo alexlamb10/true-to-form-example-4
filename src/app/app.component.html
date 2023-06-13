@@ -2,13 +2,13 @@
 
 <form [formGroup]="form" class="flex flex-col gap-4 p-4 mb-8">
   <ng-container formArrayName="todos">
-    <app-todo-component
-      *NgFor="let todo of todosArrayFormGroups; let index = index"
+    <app-todo-form
+      *ngFor="let todo of todosArrayFormGroups; let index = index"
       [form]="todo"
       [index]="index"
       (remove)="removeFormGroup($event)"
     >
-    </app-todo-component>
+    </app-todo-form>
   </ng-container>
 </form>
 <button
